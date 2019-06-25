@@ -1,0 +1,241 @@
+{
+  "name": "new",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "fKoiz",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "role": "4",
+      "varName2": "ban",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "info": "1",
+      "find": "tickets",
+      "storage": "1",
+      "varName": "ticketsmove",
+      "name": "Find Category"
+    },
+    {
+      "category": "2",
+      "varName": "catg",
+      "info": "0",
+      "storage": "1",
+      "varName2": "catid",
+      "name": "Store Category Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "3",
+      "storage": "2",
+      "varName2": "nameofa",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "problem",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "find": "Support Team",
+      "storage": "1",
+      "varName": "support.team.role.var",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "support.team.role.var",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Creating \"Support Team\" role....",
+      "storage": "1",
+      "varName2": "creating.support.team.role.message",
+      "name": "Send Message"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "roleName": "Support Team",
+      "hoist": "false",
+      "mentionable": "true",
+      "color": "GREEN",
+      "position": "",
+      "storage": "1",
+      "varName": "support.team.role",
+      "name": "Create Role"
+    },
+    {
+      "storage": "1",
+      "varName": "creating.support.team.role.message",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Support Team** Role has been successfully created.\nPlease add the role to people you'd like to add it to!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "info": "1",
+      "find": "Support Team",
+      "storage": "1",
+      "varName": "found.role.support.team",
+      "name": "Find Role"
+    },
+    {
+      "storage": "2",
+      "varName": "support.ticket.number",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "channelName": "ticket-${serverVars(\"support.ticket.number\")}",
+      "categoryID": "",
+      "topic": "Ticket #${tempVars(\"support.ticket.number\")}",
+      "position": "",
+      "storage": "1",
+      "varName": "support.ticket.channel",
+      "name": "Create Text Channel"
+    },
+    {
+      "storage": "3",
+      "varName": "support.ticket.channel",
+      "permission": "READ_MESSAGES",
+      "state": "1",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "channel": "3",
+      "varName": "support.ticket.channel",
+      "member": "1",
+      "varName2": "",
+      "permission": "READ_MESSAGES",
+      "state": "0",
+      "name": "Set Member Channel Perms"
+    },
+    {
+      "channel": "3",
+      "varName": "support.ticket.channel",
+      "role": "3",
+      "varName2": "found.role.support.team",
+      "permission": "READ_MESSAGES",
+      "state": "0",
+      "name": "Set Role Channel Perms"
+    },
+    {
+      "roleName": "ticket-${serverVars(\"support.ticket.number\")}",
+      "hoist": "false",
+      "mentionable": "true",
+      "color": "",
+      "position": "",
+      "storage": "1",
+      "varName": "channel.role",
+      "name": "Create Role"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "channel.role",
+      "name": "Add Member Role"
+    },
+    {
+      "storage": "3",
+      "varName": "support.ticket.channel",
+      "channelType": "1",
+      "toChange": "5",
+      "newState": "${tempVars(\"catid\")}",
+      "name": "Edit Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "support.ticket.channel",
+      "message": "the user ${member} have a problem:\n${tempVars(\"problem\")}\n\nif you may help him here is your chance 😉",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "info": "1",
+      "find": "ticket-logs",
+      "storage": "1",
+      "varName": "found.channel.logs",
+      "name": "Find Channel"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "22",
+      "storage": "1",
+      "varName2": "command.author",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "3",
+      "varName": "support.ticket.channel",
+      "info": "0",
+      "storage": "1",
+      "varName2": "support.ticket.channel.mention.object",
+      "name": "Store Channel Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member}, your support ticket has been created!\n${tempVars(\"support.ticket.channel.mention.object\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "Support Ticket Created Log",
+      "author": "",
+      "color": "RED",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "support.ticket.created.log.embed.message",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "support.ticket.created.log.embed.message",
+      "message": "${tempVars(\"command.author\")} has ✅ a new support ticket!\n${tempVars(\"support.ticket.channel.mention.object\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "support.ticket.created.log.embed.message",
+      "channel": "5",
+      "varName2": "found.channel.logs",
+      "name": "Send Embed Message"
+    }
+  ]
+}

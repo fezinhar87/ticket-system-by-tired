@@ -1,0 +1,95 @@
+{
+    "name": "adduser",
+    "permissions": "NONE",
+    "restriction": "1",
+    "_id": "xaMze",
+    "actions": [
+      {
+        "info": "2",
+        "infoIndex": "1",
+        "storage": "1",
+        "varName": "mem",
+        "name": "Store Command Params"
+      },
+      {
+        "storage": "1",
+        "varName": "mem",
+        "comparison": "0",
+        "value": "",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "2",
+        "iffalseVal": "11",
+        "name": "Check Variable"
+      },
+      {
+        "info": "1",
+        "find": "${tempVars(\"role\")}",
+        "storage": "1",
+        "varName": "roleo",
+        "name": "Find Role"
+      },
+      {
+        "storage": "1",
+        "varName": "roleo",
+        "comparison": "0",
+        "value": "",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "2",
+        "iffalseVal": "9",
+        "name": "Check Variable"
+      },
+      {
+        "member": "0",
+        "varName2": "",
+        "role": "3",
+        "varName": "roleo",
+        "name": "Add Member Role"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "info": "2",
+        "storage": "1",
+        "varName2": "role",
+        "name": "Store Channel Info"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "the member is ${tempVars(\"mem\")} and he is now a member on this ticket\n",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      },
+      {
+        "name": "End Action Sequence"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "the role wasent found make sure you are in a ticket channel ",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      },
+      {
+        "name": "End Action Sequence"
+      },
+      {
+        "info": "19",
+        "storage": "1",
+        "varName2": "pre",
+        "name": "Store Bot Client Info"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "you didn't tag a member please do \n${tempVars(\"pre\")}adduser @member",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ]
+  }

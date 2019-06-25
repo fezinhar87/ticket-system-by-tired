@@ -1,0 +1,83 @@
+{
+    "name": "setup",
+    "permissions": "MANAGE_ROLES",
+    "restriction": "1",
+    "_id": "tbAVW",
+    "actions": [
+      {
+        "storage": "1",
+        "varName": "wait",
+        "min": "3",
+        "max": "12",
+        "name": "Generate Random Number"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "please wait ${tempVars(\"wait\")} seconds",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      {
+        "time": "${tempVars(\"wait\")}",
+        "measurement": "1",
+        "name": "Wait"
+      },
+      {
+        "roleName": "Support Team",
+        "hoist": "true",
+        "mentionable": "true",
+        "color": "#00FFFF",
+        "position": "5",
+        "storage": "2",
+        "varName": "noice",
+        "name": "Create Role"
+      },
+      {
+        "roleName": "Banned tickets",
+        "hoist": "false",
+        "mentionable": "false",
+        "color": "",
+        "position": "",
+        "storage": "0",
+        "varName": "",
+        "name": "Create Role"
+      },
+      {
+        "channelName": "ticket-logs",
+        "categoryID": "",
+        "topic": "",
+        "position": "",
+        "storage": "0",
+        "varName": "",
+        "name": "Create Text Channel"
+      },
+      {
+        "channelName": "tickets",
+        "position": "1",
+        "storage": "2",
+        "varName": "catg",
+        "name": "Create Category Channel"
+      },
+      {
+        "channelName": "Voice Ticket",
+        "position": "",
+        "storage": "2",
+        "varName": "vtcc",
+        "name": "Create Category Channel"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "hey thanks for the activating me i am really exited to setup your server\n---\nso i have created a roles\n---\nfirst of all \nI created a role called: Support Team \nThen i created a role Called Banned tickets\nThen i create a text channel that called ticket-logs\nThat it\n---\nnow this is what you need to do your self:\n1)assigan the roles to who you trust and help you\n2)move and mannge the ticket-logs channel and that it!\n",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      }
+    ]
+  }
