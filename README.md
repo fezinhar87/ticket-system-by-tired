@@ -19,4 +19,4 @@ and more
 * [STEAM ](https://steamcommunity.com/id/zZzTiredzZz) 
 
 ### discord
- tired#1379
+ tired#0666
